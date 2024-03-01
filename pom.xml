@@ -1,0 +1,106 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.luv2code</groupId>
+	<artifactId>spring-crm</artifactId>
+	<version>1.0.0</version>
+	<packaging>war</packaging>
+
+	<properties>
+		<hibernate.version>6.4.4.Final</hibernate.version>
+		<mysql.connector.version>8.0.33</mysql.connector.version>
+		<c3po.version>0.10.0-pre5</c3po.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>6.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>6.1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>6.1.4</version>
+		</dependency>
+		
+		<dependency>
+    		<groupId>jakarta.servlet</groupId>
+    		<artifactId>jakarta.servlet-api</artifactId>
+    		<version>6.0.0</version>
+    		<scope>provided</scope>
+		</dependency>
+
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.4.4.Final</version>
+		</dependency>
+
+
+		<!-- MySQL -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+
+		<!-- C3PO -->
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>${c3po.version}</version>
+		</dependency>
+
+
+		<!-- to compensate for java 9+ not including jaxb -->
+		<dependency>
+		    <groupId>jakarta.xml.bind</groupId>
+		    <artifactId>jakarta.xml.bind-api</artifactId>
+		    <version>4.0.0</version>
+		    <scope>provided</scope>
+		</dependency>	
+		
+		<dependency>
+		    <groupId>org.glassfish.jaxb</groupId>
+		    <artifactId>jaxb-runtime</artifactId>
+		    <version>4.0.0</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>jakarta.el</groupId>
+		    <artifactId>jakarta.el-api</artifactId>
+		    <version>6.0.0-M2</version>
+		</dependency>
+
+		
+	</dependencies>
+
+	<build>
+
+		<finalName>spring-crm</finalName>
+
+		<plugins>
+
+			<!-- Builds a Web Application Archive (WAR) file from the project output 
+				and its dependencies. -->
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+			    <artifactId>maven-war-plugin</artifactId>
+			    <version>3.4.0</version>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
+
